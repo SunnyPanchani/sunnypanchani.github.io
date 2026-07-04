@@ -498,6 +498,16 @@ ul { list-style: none; }
 .about-img-block {
   position: relative;
 }
+.about-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  max-height: 420px;
+  object-fit: cover;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+  display: block;
+}
 .about-img-placeholder {
   width: 100%;
   aspect-ratio: 3/4;
