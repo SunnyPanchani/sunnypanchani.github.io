@@ -1,0 +1,571 @@
+/**
+ * theme-light.css
+ * Drop-in light theme override for Sunny Panchani portfolio.
+ *
+ * HOW TO USE:
+ * 1. Add this line to <head> in index.html, AFTER style.css:
+ *       <link rel="stylesheet" href="css/theme-light.css" />
+ * 2. That's it. To go back dark, remove that line.
+ *
+ * Optional toggle button: add data-theme="light" to <html> and
+ * wrap all selectors below in [data-theme="light"] { ... } for JS switching.
+ */
+
+/* ===========================
+   DESIGN TOKEN OVERRIDES
+=========================== */
+:root {
+  --bg-primary:    #f8fafc;
+  --bg-alt:        #f1f5f9;
+  --bg-card:       rgba(0, 0, 0, 0.025);
+  --color-primary: #1d4ed8;          /* slightly deeper blue for white bg readability */
+  --color-accent:  #0284c7;
+  --color-warning: #d97706;
+  --text-primary:  #0f172a;
+  --text-secondary:#334155;
+  --text-muted:    #64748b;
+  --border:        rgba(29, 78, 216, 0.2);
+  --border-light:  rgba(0, 0, 0, 0.09);
+  --glass:         rgba(255, 255, 255, 0.75);
+  --shadow-sm:     0 4px 16px rgba(0, 0, 0, 0.07);
+  --shadow-md:     0 12px 40px rgba(0, 0, 0, 0.1);
+  --shadow-blue:   0 0 30px rgba(29, 78, 216, 0.07);
+}
+
+/* ===========================
+   BASE
+=========================== */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+::selection {
+  background: rgba(29, 78, 216, 0.15);
+  color: var(--text-primary);
+}
+
+/* ===========================
+   LOADER
+=========================== */
+#loader {
+  background: #f0f4ff;
+}
+.loader-icon {
+  color: var(--color-primary);
+}
+.loader-label,
+.loader-name {
+  color: #94a3b8;
+}
+.loader-track {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+#navbar.scrolled {
+  background: rgba(248, 250, 252, 0.94);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.navbar-nav .nav-link {
+  color: #64748b;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.toggler-line {
+  background: #64748b;
+}
+
+/* Collapse menu on mobile */
+.navbar-collapse {
+  background: rgba(248, 250, 252, 0.98);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 8px;
+  box-shadow: var(--shadow-md);
+}
+
+/* ===========================
+   HERO
+=========================== */
+#hero {
+  background: #f0f4ff;
+}
+
+.hero-grid-overlay {
+  background-image:
+    linear-gradient(rgba(29, 78, 216, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 78, 216, 0.06) 1px, transparent 1px);
+}
+
+.hero-eyebrow {
+  color: #64748b;
+}
+
+.hero-name {
+  color: var(--text-primary);
+}
+
+.name-accent {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-primary);
+}
+
+.hero-tagline {
+  color: #475569;
+}
+.hero-sub {
+  color: #64748b;
+}
+.hero-sub strong {
+  color: var(--color-primary);
+}
+
+/* Stats strip on light */
+.hero-stats-strip {
+  background: rgba(248, 250, 252, 0.0); /* keep transparent over hero */
+}
+.stat-item {
+  border-color: rgba(0, 0, 0, 0.07);
+  background: rgba(255, 255, 255, 0.6);
+}
+.stat-value  { color: var(--text-primary); }
+.stat-plus   { color: var(--color-primary); }
+.stat-label  { color: #94a3b8; }
+.stat-divider { background: rgba(0, 0, 0, 0.1); }
+
+/* Scroll indicator */
+.scroll-line {
+  background: linear-gradient(to bottom, var(--color-primary), transparent);
+}
+.scroll-indicator span { color: #94a3b8; }
+.eyebrow-dot { background: var(--color-primary); }
+
+/* ===========================
+   SECTIONS
+=========================== */
+.section     { background: var(--bg-primary); }
+.section-alt { background: var(--bg-alt); }
+
+.section-label  { color: var(--color-primary); }
+.section-title  { color: var(--text-primary); }
+.section-sub    { color: var(--text-secondary); }
+
+/* ===========================
+   BUTTONS / CTAs
+=========================== */
+.cta-primary {
+  background: var(--color-primary);
+}
+.cta-primary:hover {
+  background: #1e40af;
+  color: #fff;
+}
+
+.cta-secondary {
+  color: var(--text-primary);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+.cta-secondary:hover {
+  border-color: var(--color-primary);
+  background: rgba(29, 78, 216, 0.05);
+  color: var(--text-primary);
+}
+
+.btn-nav-resume {
+  background: var(--color-primary);
+}
+.btn-nav-resume:hover {
+  background: #1e40af;
+  color: #fff;
+}
+
+/* ===========================
+   ABOUT
+=========================== */
+.about-img-placeholder {
+  background: #e8f0fe;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.img-initials { color: rgba(29, 78, 216, 0.3); }
+.img-hint     { color: #94a3b8; }
+
+.about-badge {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+.about-badge .badge-title { color: var(--text-primary); }
+.about-badge .badge-sub   { color: #94a3b8; }
+
+.about-text { color: var(--text-secondary); }
+
+.philosophy-item {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+.philosophy-item:hover { border-color: rgba(29, 78, 216, 0.2); }
+.philo-icon { background: rgba(29, 78, 216, 0.08); color: var(--color-primary); }
+.philo-text strong { color: var(--text-primary); }
+.philo-text span   { color: #64748b; }
+
+/* ===========================
+   TIMELINE
+=========================== */
+.tl-line { background: rgba(0, 0, 0, 0.1); }
+.tl-dot  { background: #cbd5e1; border-color: var(--bg-alt); }
+.tl-dot.active {
+  background: var(--color-primary);
+  border-color: var(--bg-primary);
+}
+.tl-dot.edu-dot { background: var(--color-warning); }
+
+.tl-year    { color: var(--color-primary); }
+.tl-year-end { color: #94a3b8; }
+.tl-company { color: var(--text-primary); }
+.tl-loc     { color: #94a3b8; }
+.tl-role    { color: var(--color-primary); }
+.tl-desc    { color: var(--text-secondary); }
+.tl-tags span {
+  background: rgba(29, 78, 216, 0.06);
+  border-color: rgba(29, 78, 216, 0.15);
+  color: var(--color-primary);
+}
+
+/* ===========================
+   SKILLS
+=========================== */
+.skill-tab {
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.6);
+}
+.skill-tab:hover {
+  border-color: rgba(29, 78, 216, 0.25);
+  color: var(--text-primary);
+}
+.skill-tab.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.skills-grid {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.07);
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-name   { color: var(--text-secondary); }
+.skill-track  { background: rgba(0, 0, 0, 0.07); }
+.skill-pct    { color: #94a3b8; }
+.learning-pct { color: var(--color-warning); }
+
+.ai-note {
+  background: rgba(29, 78, 216, 0.04);
+  border-color: rgba(29, 78, 216, 0.12);
+  color: #64748b;
+}
+.ai-note i { color: var(--color-primary); }
+
+/* ===========================
+   PROJECTS
+=========================== */
+.project-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.07);
+  box-shadow: var(--shadow-sm);
+}
+.project-card:hover {
+  border-color: rgba(29, 78, 216, 0.3);
+  box-shadow: var(--shadow-md), var(--shadow-blue);
+}
+.project-card.featured {
+  border-color: rgba(29, 78, 216, 0.18);
+}
+
+.proj-img-placeholder {
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  color: rgba(29, 78, 216, 0.3);
+}
+.project-card:hover .proj-img-placeholder {
+  color: rgba(29, 78, 216, 0.55);
+}
+
+.proj-tags span {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: #64748b;
+}
+.proj-company   { color: var(--color-primary); }
+.proj-year      { color: #94a3b8; }
+.proj-title     { color: var(--text-primary); }
+.proj-desc      { color: #64748b; }
+
+.proj-metrics {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.05);
+}
+.m-label { color: #94a3b8; }
+.m-val   { color: var(--text-secondary); }
+
+.proj-cta { color: var(--color-primary); }
+.proj-cta:hover { color: #1e40af; }
+
+/* ===========================
+   CALCULATORS
+=========================== */
+.calc-wrapper {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.calc-nav {
+  background: rgba(0, 0, 0, 0.025);
+  border-bottom-color: rgba(0, 0, 0, 0.07);
+}
+.calc-tab {
+  color: #64748b;
+  border-bottom-color: transparent;
+}
+.calc-tab:hover {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.03);
+}
+.calc-tab.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  background: rgba(29, 78, 216, 0.05);
+}
+
+.calc-title { color: var(--text-primary); }
+.calc-desc  { color: #64748b; }
+.calc-formula-pill {
+  background: rgba(29, 78, 216, 0.07);
+  border-color: rgba(29, 78, 216, 0.18);
+}
+.calc-formula-pill span { color: var(--color-primary); }
+
+.calc-field label { color: #64748b; }
+
+input[type="number"],
+select {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+}
+input[type="number"]:focus,
+select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+}
+select option { background: #fff; color: var(--text-primary); }
+
+.unit { color: #94a3b8; }
+
+.calc-run {
+  background: var(--color-primary);
+}
+.calc-run:hover { background: #1e40af; }
+
+.calc-result.show {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+.result-label { color: #94a3b8; }
+.result-value { color: var(--color-primary); }
+.result-unit  { color: #94a3b8; }
+.result-note  {
+  border-top-color: rgba(0, 0, 0, 0.07);
+  color: #64748b;
+}
+.result-note code {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-secondary);
+}
+.result-warn { color: var(--color-warning); }
+
+/* ===========================
+   CONTACT
+=========================== */
+.contact-intro { color: var(--text-secondary); }
+
+.contact-item {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+.contact-item:hover {
+  background: rgba(29, 78, 216, 0.04);
+  border-color: rgba(29, 78, 216, 0.18);
+}
+.contact-icon {
+  background: rgba(29, 78, 216, 0.08);
+  color: var(--color-primary);
+}
+.c-label { color: #94a3b8; }
+.c-val   { color: var(--text-primary); }
+
+.contact-form-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.07);
+  box-shadow: var(--shadow-sm);
+}
+.form-heading { color: var(--text-primary); }
+.form-field label { color: #64748b; }
+
+input[type="text"],
+input[type="email"],
+textarea {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.09);
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder { color: #cbd5e1; }
+
+.form-note     { color: #94a3b8; }
+.form-note a   { color: var(--color-primary); }
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  background: #f1f5f9;
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+.footer-nav a   { color: #64748b; }
+.footer-nav a:hover { color: var(--text-primary); background: rgba(0,0,0,0.04); }
+.footer-social a {
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #64748b;
+}
+.footer-social a:hover {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.footer-bottom { border-top-color: rgba(0, 0, 0, 0.07); }
+.footer-bottom span { color: #94a3b8; }
+.footer-mono   { color: #94a3b8; }
+
+.brand-text    { color: var(--text-primary); }
+.brand-accent  { color: var(--color-primary); }
+.brand-icon    { color: var(--color-primary); }
+
+/* ===========================
+   SCROLLBAR (light)
+=========================== */
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ===========================
+   PROJECT DETAIL PAGE (light)
+=========================== */
+.proj-hero {
+  background: #e8f0fe;
+}
+.proj-hero-placeholder {
+  background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+  color: rgba(29, 78, 216, 0.25);
+}
+.proj-hero-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(248, 250, 252, 0.96) 0%,
+    rgba(248, 250, 252, 0.45) 50%,
+    rgba(248, 250, 252, 0.08) 100%
+  );
+}
+.proj-hero-tags span {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(29, 78, 216, 0.2);
+  color: var(--color-primary);
+}
+.proj-hero-title { color: var(--text-primary); }
+.proj-hero-sub   { color: #64748b; }
+
+.proj-spec-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.07);
+  box-shadow: var(--shadow-sm);
+}
+.spec-title    { color: var(--color-primary); }
+.spec-label    { color: #94a3b8; }
+.spec-val      { color: var(--text-primary); }
+.spec-row      { border-bottom-color: rgba(0, 0, 0, 0.06); }
+
+.proj-metric-val   { color: var(--color-primary); }
+.proj-metric-label { color: #94a3b8; }
+
+.proj-tech-grid span {
+  background: rgba(29, 78, 216, 0.06);
+  border-color: rgba(29, 78, 216, 0.15);
+  color: var(--color-primary);
+}
+
+.proj-section { border-bottom-color: rgba(0, 0, 0, 0.07); }
+.proj-section-label { color: var(--color-primary); }
+.proj-section-title { color: var(--text-primary); }
+.proj-main p   { color: var(--text-secondary); }
+
+.proj-step {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+.proj-step:hover { border-color: rgba(29, 78, 216, 0.2); }
+.step-num {
+  background: rgba(29, 78, 216, 0.08);
+  border-color: rgba(29, 78, 216, 0.18);
+  color: var(--color-primary);
+}
+.step-text        { color: var(--text-secondary); }
+.step-text strong { color: var(--text-primary); }
+
+.gallery-placeholder {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #94a3b8;
+}
+.gallery-note {
+  background: rgba(29, 78, 216, 0.04);
+  border-color: rgba(29, 78, 216, 0.1);
+  color: #64748b;
+}
+
+.challenge-item {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+.challenge-icon { background: rgba(29, 78, 216, 0.08); color: var(--color-primary); }
+.challenge-item strong { color: var(--text-primary); }
+.challenge-item p { color: #64748b !important; }
+
+.lessons-list li { color: var(--text-secondary); }
+.lessons-list li::before { background: var(--color-primary); }
+
+.proj-nav-link {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.07);
+}
+.proj-nav-link:hover {
+  border-color: rgba(29, 78, 216, 0.2);
+  background: rgba(29, 78, 216, 0.03);
+}
+.nav-dir  { color: #94a3b8; }
+.nav-proj { color: var(--text-primary); }
