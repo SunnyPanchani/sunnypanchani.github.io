@@ -513,3 +513,68 @@
   .gallery-placeholder { height: 160px; }
   .proj-section { margin-bottom: 40px; padding-bottom: 40px; }
 }
+
+/* ===========================
+   CATALOG GRID
+   Used for Freelance Work and Simulation Series —
+   multiple distinct items, not one project's photo set
+=========================== */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.catalog-item {
+  background: var(--glass);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.28s ease, transform 0.28s ease;
+}
+.catalog-item:hover {
+  border-color: var(--border);
+  transform: translateY(-4px);
+}
+
+.catalog-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.cat-img-placeholder {
+  width: 100%;
+  height: 200px;
+  background: rgba(37, 99, 235, 0.05);
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: var(--text-muted);
+}
+
+.catalog-caption {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cat-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.cat-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .catalog-grid { grid-template-columns: 1fr; }
+}
